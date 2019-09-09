@@ -1,27 +1,17 @@
-# SistemaRedetex
+# Sistema Redetex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.9.
 
-## Development server
+## Instalando as Dependências
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Após baixar ou clonar o projeto, é necessário executar o comando `npm install` na pasta da view do projeto para instalar todas as dependências.
 
-## Code scaffolding
+## Ambiente de Desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após baixar as dependências, execute o comando `ng serve` na pasta da view do projeto e o sistema será servido na porta 4200, basta acessar `http://localhost:4200/`.
 
-## Build
+## Informações sobre o Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Projeto para Disciplina Tecnologias para Internet II
+2. Autor: Liendson Douglas
+3. Data de Início: 09/09/2019
