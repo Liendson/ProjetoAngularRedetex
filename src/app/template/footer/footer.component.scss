@@ -1,0 +1,113 @@
+.footer {
+
+   padding: 30px 0 30px 0;
+   font-size: 14px;
+   background: #fff;
+
+   .footer-top {
+      padding: 60px 0 30px 0;
+      background: #f5f8fd;
+
+      .footer-info {
+         margin-bottom: 30px;
+
+         h3 {
+            font-size: 34px;
+            margin: 0 0 20px 0;
+            padding: 2px 0 2px 0;
+            line-height: 1;
+            font-family: "Montserrat", sans-serif;
+            color: #1bb1dc;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+         }
+
+         p {
+            font-size: 13px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: "Montserrat", sans-serif;
+            color: #535074;
+         }
+      }
+
+      .social-links {
+
+         a {
+            font-size: 18px;
+            display: inline-block;
+            background: #1bb1dc;
+            color: #fff;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+         }
+
+         a:hover {
+            background: #0a98c0;
+            color: #fff;
+         }
+      }
+
+      h4 {
+         font-size: 14px;
+         font-weight: bold;
+         color: #1bb1dc;
+         text-transform: uppercase;
+         position: relative;
+         padding-bottom: 10px;
+      }
+
+      .footer-links {
+
+         ul {
+
+            li {
+               padding: 8px 0;
+            }
+            
+            li:first-child {
+               padding-top: 0;
+            }
+
+            a {
+               color: #1bb1dc;
+            }
+
+            a:hover {
+               color: #1bb1dc;
+            }
+
+            list-style: none;
+            padding: 0;
+            margin: 0;
+         }
+         margin-bottom: 30px;
+      }
+   }
+
+   .copyright {
+      text-align: center;
+      padding-top: 30px;
+      color: #1bb1dc;
+      font-size: 15px;
+   }
+   .credits {
+      a {
+         color: #1bb1dc;
+      }
+      a:hover {
+         color: #0a98c0;
+      }
+      text-align: center;
+      font-size: 14px;
+      padding-top: 4px;
+      color: #1bb1dc;
+   }
+}

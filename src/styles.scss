@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+// Padrões dos Estilos Globais
+body {
+  color: #444;
+  font-family: "Open Sans", sans-serif !important;
+  a {
+    color: #1bb1dc;
+    transition: 0.5s;
+  }
+  
+  a:hover, a:active, a:focus {
+    color: #0a98c0;
+    outline: none;
+    text-decoration: none;
+  }
+    
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+}
+
+// Padrão de Botões
+.btn-info, .btn-danger, .btn-primary, .btn-alert {
+  background-color: #1bb1dc !important;
+  border-color: #1bb1dc !important;
+}
+
+.btn-info:hover, .btn-danger:hover, .btn-primary:hover, .btn-alert:hover {
+  background-color: #1a93b4 !important;
+  border-color: #1a93b4 !important;
+}
