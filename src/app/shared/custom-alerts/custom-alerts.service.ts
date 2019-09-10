@@ -6,8 +6,6 @@ import Swal, * as swal from 'sweetalert2';
 })
 export class CustomAlertsService {
 
-  constructor() { }
-
   public exibirSucesso(titulo: string, mensagem: string) {
     Swal.fire({
       title: titulo,
