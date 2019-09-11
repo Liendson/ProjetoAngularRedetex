@@ -2,6 +2,7 @@
 
 Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.9.
 Para que o projeto funcione, é necessário que o [Node.js](https://nodejs.org/en/) esteja instalado na sua máquina.
+Projeto em desenvolvimento com previsão de término dia 13/12/2019;
 
 ## Instalando as Dependências
 
@@ -18,4 +19,5 @@ Caso a porta 4200 já esteja em uso, é necessário que seja especificado a port
 1. Projeto para Disciplina Tecnologias para Internet II
 2. Autor: Liendson Douglas
 3. Data de Início: 09/09/2019
+3. Previsão de Término: 13/12/2019
 4. Documentação do Projeto: [Documentação](https://drive.google.com/open?id=1Xg6tmkOBshHs4YYIq6YW9XbSvgFNgzrT)
