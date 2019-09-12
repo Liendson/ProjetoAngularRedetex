@@ -1,8 +1,9 @@
 # Sistema Redetex
 
-Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.9.
-Para que o projeto funcione, é necessário que o [Node.js](https://nodejs.org/en/) esteja instalado na sua máquina.
-Projeto em desenvolvimento com previsão de término dia 13/12/2019;
+- Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.9.
+- Para que o projeto funcione, é necessário que o [Node.js](https://nodejs.org/en/) esteja instalado na sua máquina.
+- Após instalar o node, é necessário instalar o Angular CLI através do comando `ng install -g @angular/cli`.
+- Projeto em desenvolvimento com previsão de término dia 13/12/2019;
 
 ## Instalando as Dependências
 
