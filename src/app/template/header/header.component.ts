@@ -7,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public title = 'Redetex Ambientações';
   public usuario = 'Liendson';
+  public title: string = 'Redetex Ambientações';
+  public teee: string = 'Redetex Ambientações';
+
 
   constructor() { }
 
