@@ -22,12 +22,16 @@ body {
 }
 
 // Padrão de Botões
-.btn-info, .btn-danger, .btn-primary, .btn-alert {
+.btn-info,
+.btn-danger,
+.btn-primary,
+.btn-alert {
+  
   background-color: #1bb1dc !important;
   border-color: #1bb1dc !important;
-}
 
-.btn-info:hover, .btn-danger:hover, .btn-primary:hover, .btn-alert:hover {
-  background-color: #1a93b4 !important;
-  border-color: #1a93b4 !important;
+  &:hover {
+    background-color: #1a93b4 !important;
+    border-color: #1a93b4 !important;
+  }
 }
