@@ -25,6 +25,7 @@ import { UsuariosComponent } from './features/usuarios/usuarios.component';
 import { AlterarUsuariosComponent } from './features/usuarios/alterar/alterar.component';
 import { IncluirUsuariosComponent } from './features/usuarios/incluir/incluir.component';
 
+import { IndexComponent } from './template/index/index.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IncluirUsuariosComponent } from './features/usuarios/incluir/incluir.co
     HeaderComponent,
     FooterComponent,
     LoginLogoutComponent,
+    IndexComponent,
     OrcamentosComponent,
     ServicosComponent,
     ClientesComponent,
@@ -43,7 +45,7 @@ import { IncluirUsuariosComponent } from './features/usuarios/incluir/incluir.co
     AlterarServicosComponent,
     IncluirServicosComponent,
     AlterarUsuariosComponent,
-    IncluirUsuariosComponent
+    IncluirUsuariosComponent,
   ],
   imports: [
     BrowserModule,

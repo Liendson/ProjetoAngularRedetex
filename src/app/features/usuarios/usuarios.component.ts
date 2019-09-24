@@ -9,6 +9,8 @@ export class UsuariosComponent implements OnInit {
 
   protected nivel = 1;
 
+  public incluir = true;
+
   constructor() { }
 
   ngOnInit() {

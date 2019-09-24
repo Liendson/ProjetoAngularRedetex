@@ -7,15 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesComponent implements OnInit {
 
-  protected nivel = 1;
-
   constructor() { }
 
   ngOnInit() {
   }
 
   setarNível(nivel) {
-    this.nivel = nivel;
+    // this.nivel = nivel;
   }
 
 }

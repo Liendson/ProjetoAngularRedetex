@@ -23,9 +23,7 @@ body {
 
 // Padrão de Botões
 .btn-info,
-.btn-danger,
-.btn-primary,
-.btn-alert {
+.btn-primary {
   
   background-color: #1bb1dc !important;
   border-color: #1bb1dc !important;
@@ -35,3 +33,96 @@ body {
     border-color: #1a93b4 !important;
   }
 }
+
+// Padrão de Label
+.label-primary {
+  background-color: #1bb1dc !important;
+
+  &:hover {
+    background-color: #1a93b4 !important;
+    border-color: #1a93b4 !important;
+  }
+}
+
+// Input de Formuláios
+div.form-control.ng-dirty {
+
+  &.ng-invalid {
+    color: #a94442;
+  }
+  &.ng-valid {
+    color: #1bb1dc;
+  }
+
+}
+
+input.form-control.ng-invalid {
+
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+
+}
+
+input.form-control.ng-valid {
+  
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+
+}
+
+select.form-control.ng-invalid {
+
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+  
+} 
+
+select.form-control.ng-valid {
+
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  
+}
+
+textarea.form-control.ng-valid {
+  
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+  
+}
+
+textarea.form-control.ng-invalid {
+  
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  
+}
+
+.form-text.ng-invalid.ng-dirty.ng-touched { color: #a94442 }
+.form-text.ng-valid.ng-dirty.ng-touched { color: #1bb1dc }
+.input-invalido { border-left: 5px solid #a94442 !important; }
+.input-valido { border-left: 5px solid #1bb1dc !important }
