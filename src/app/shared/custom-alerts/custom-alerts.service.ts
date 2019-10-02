@@ -15,6 +15,15 @@ export class CustomAlertsService {
     });
   }
 
+  public exibirAvisoNaoImplementada() {
+    Swal.fire({
+      title: 'Erro!',
+      text: 'Esta funcionalidade ainda não foi implementada!',
+      type: 'error',
+      confirmButtonClass: 'btn-danger',
+    });
+  }
+
   public exibirErro(titulo: string, mensagem: string) {
     Swal.fire({
       title: titulo,

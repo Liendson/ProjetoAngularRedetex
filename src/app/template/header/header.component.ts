@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,12 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public title = 'Redetex Ambientações';
-  public usuario = 'Liendson';
-
-  constructor() { }
+  constructor(
+    private mensagem: CustomAlertsService
+  ) {}
 
   ngOnInit() {
+  }
+
+  naoImplementada() {
+    this.mensagem.exibirAvisoNaoImplementada();
   }
 
 }
