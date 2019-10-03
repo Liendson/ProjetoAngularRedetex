@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { DataTablesModule } from 'angular-datatables';
 
 import { IncluirOrcamentosComponent } from './incluir-orcamentos/incluir-orcamentos.component';
 import { EditarOrcamentosComponent } from './editar-orcamentos/editar-orcamentos.component';
@@ -22,13 +20,8 @@ const routes = [
       ListarOrcamentosComponent,
    ],
    imports: [
-      CommonModule,
-      RouterModule.forChild(routes),
-      CommonModule,
-      HttpClientModule,
-      ReactiveFormsModule,
-      FormsModule,
-      DataTablesModule,
+      SharedModule,
+      RouterModule.forChild(routes)
    ]
 })
 export class OrcamentosModule { }

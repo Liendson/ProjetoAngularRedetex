@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { DataTablesModule } from 'angular-datatables';
 
 import { IncluirClientesComponent } from './incluir-clientes/incluir-clientes.component';
 import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
@@ -22,12 +20,8 @@ const routes = [
       EditarClientesComponent
    ],
    imports: [
-      CommonModule,
+      SharedModule,
       RouterModule.forChild(routes),
-      HttpClientModule,
-      ReactiveFormsModule,
-      FormsModule,
-      DataTablesModule
    ]
 })
 export class ClientesModule {}

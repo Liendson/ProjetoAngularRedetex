@@ -9,10 +9,8 @@
           <thead>
             <tr>
               <th><em class="fa fa-cog"></em></th>
-              <th>Tipo</th>
-              <th>Cliente</th>
+              <th>Nome</th>
               <th>Endereço</th>
-              <th>Situação</th>
             </tr>
           </thead>
           <tbody>
@@ -23,22 +21,20 @@
                     <em class="fa fa-edit small"></em>
                   </button>&nbsp;
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="" (click)="editarOrcamento(orcamento.id)">Editar</a></li>
-                    <li><a href="">Imprimir</a></li>
-                    <li><a href="">Gerar Recibo</a></li>
+                    <li><a (click)="editarOrcamento(orcamento.id)">Editar</a></li>
+                    <li><a>Imprimir</a></li>
+                    <li><a>Gerar Recibo</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Enviar Medidas</a></li>
-                    <li><a href="#">Concluir Serviço</a></li>
+                    <li><a>Enviar Medidas</a></li>
+                    <li><a>Concluir Serviço</a></li>
                   </ul>
                   <button class="btn btn-danger" (click)="naoImplementada()">
                     <em class="fa fa-remove"></em>
                   </button>
                 </div>
               </td>
-              <td>{{ orcamento.id }}</td>
               <td>{{ orcamento.userId }}</td>
               <td>{{ orcamento.title }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
-              <td class="alert alert-success" align="center">Concluído</td>
             </tr>
           </tbody>
         </table>

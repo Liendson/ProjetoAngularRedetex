@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { IncluirUsuariosComponent } from './incluir-usuarios/incluir-usuarios.component';
 import { ListarUsuariosComponent } from './listar-usuarios/listar-usuarios.component';
@@ -21,11 +20,8 @@ const routes = [
       EditarUsuariosComponent
    ],
    imports: [
-      CommonModule,
+      SharedModule,
       RouterModule.forChild(routes),
-      HttpClientModule,
-      ReactiveFormsModule,
-      FormsModule
    ]
 })
 export class UsuariosModule {}
