@@ -19,7 +19,7 @@ const routes = [
    declarations: [
       IncluirOrcamentosComponent,
       EditarOrcamentosComponent,
-      ListarOrcamentosComponent
+      ListarOrcamentosComponent,
    ],
    imports: [
       CommonModule,
@@ -28,7 +28,7 @@ const routes = [
       HttpClientModule,
       ReactiveFormsModule,
       FormsModule,
-      DataTablesModule
+      DataTablesModule,
    ]
 })
 export class OrcamentosModule { }

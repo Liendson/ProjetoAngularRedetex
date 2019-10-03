@@ -13,7 +13,7 @@ export class ListarOrcamentosComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject();
-  public orcamentos = [];
+  public orcamentos: any[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -35,7 +35,7 @@ export class ListarOrcamentosComponent implements OnInit {
     this.activatedRoute.params.subscribe(() => {
       const urlRequest = `https://jsonplaceholder.typicode.com/posts/`;
 
-      this.http.get(urlRequest).subscribe((orcamento: any) => {
+      this.http.get(urlRequest).subscribe((orcamento: any[]) => {
         this.orcamentos = orcamento;
         this.dtTrigger.next();
       });

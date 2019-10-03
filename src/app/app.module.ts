@@ -11,7 +11,6 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { IndexComponent } from './template/index/index.component';
 import { DataTablesModule } from 'angular-datatables';
-import { TableComponent } from './template/table/table.component';
 
 const routes: Routes = [
   { path: 'orcamentos', loadChildren: () => import('./features/orcamentos/orcamentos.module').then(module => module.OrcamentosModule) },
@@ -27,10 +26,9 @@ const routes: Routes = [
     HeaderComponent,
     IndexComponent,
     SidebarComponent,
-    TableComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
     HttpClientModule,
     DataTablesModule
