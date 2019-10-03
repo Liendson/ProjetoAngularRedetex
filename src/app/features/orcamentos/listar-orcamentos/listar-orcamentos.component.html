@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Orçamentos</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th><em class="fa fa-cog"></em></th>
+              <th>Tipo</th>
+              <th>Cliente</th>
+              <th>Endereço</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orcamento of orcamentos">
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-primary" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <em class="fa fa-edit small"></em>
+                  </button>&nbsp;
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="" (click)="editarOrcamento(orcamento.id)">Editar</a></li>
+                    <li><a href="">Imprimir</a></li>
+                    <li><a href="">Gerar Recibo</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Enviar Medidas</a></li>
+                    <li><a href="#">Concluir Serviço</a></li>
+                  </ul>
+                  <button class="btn btn-danger" (click)="naoImplementada()">
+                    <em class="fa fa-remove"></em>
+                  </button>
+                </div>
+              </td>
+              <td>{{ orcamento.id }}</td>
+              <td>{{ orcamento.userId }}</td>
+              <td>{{ orcamento.title }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
+              <td class="alert alert-success" align="center">Concluído</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

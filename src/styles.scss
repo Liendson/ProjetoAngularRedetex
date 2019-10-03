@@ -1,4 +1,7 @@
 // Padrões dos Estilos Globais
+html {
+  font-size: 16px !important;
+}
 body {
   color: #444;
   font-family: "Open Sans", sans-serif !important;
@@ -21,13 +24,157 @@ body {
   }
 }
 
-// Padrão de Botões
-.btn-info, .btn-danger, .btn-primary, .btn-alert {
-  background-color: #1bb1dc !important;
-  border-color: #1bb1dc !important;
+// Padrão de Tabelas
+
+.dataTables_wrapper {
+  .dataTables_paginate {
+    .paginate_button.current {
+
+      color: #ffffff !important;
+      border: none !important;
+      background: #1bb1dc !important;
+
+      &:hover {
+        background: #1a93b4 !important;
+      }
+    }
+
+    .paginate_button {
+
+      border: none !important;
+
+      &:hover {
+        border: none !important;
+        background: #1a93b4 !important;
+      }
+    }
+  }
+}   
+
+.dataTables_info {
+  color: #1bb1dc !important;
 }
 
-.btn-info:hover, .btn-danger:hover, .btn-primary:hover, .btn-alert:hover {
-  background-color: #1a93b4 !important;
-  border-color: #1a93b4 !important;
+.dataTables_length, .dataTables_filter {
+
+  label {
+    color: #1bb1dc;
+  
+    input {
+      border: 1px solid #d1d3e2;
+      border-radius: 4px;
+    }
+  }
+
 }
+
+select {
+  border-radius: 4px;
+  border: 1px solid #d1d3e2;
+}
+
+// Padrão de Botões
+.btn-info,
+.btn-primary {
+  
+  background-color: #1bb1dc !important;
+  border-color: #1bb1dc !important;
+
+  &:hover {
+    background-color: #1a93b4 !important;
+    border-color: #1a93b4 !important;
+  }
+}
+
+// Padrão de Label
+.label-primary {
+  background-color: #1bb1dc !important;
+
+  &:hover {
+    background-color: #1a93b4 !important;
+    border-color: #1a93b4 !important;
+  }
+}
+
+// Input de Formuláios
+div.form-control.ng-dirty {
+
+  &.ng-invalid {
+    color: #a94442;
+  }
+  &.ng-valid {
+    color: #1bb1dc;
+  }
+
+}
+
+input.form-control.ng-invalid {
+
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+
+}
+
+input.form-control.ng-valid {
+  
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+
+}
+
+select.form-control.ng-invalid {
+
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+  
+} 
+
+select.form-control.ng-valid {
+
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  
+}
+
+textarea.form-control.ng-valid {
+  
+  &.ng-untouched {
+    border-left: 5px solid #1bb1dc
+  }
+  &.ng-touched {
+    border-left: 5px solid #1bb1dc
+  }
+  
+}
+
+textarea.form-control.ng-invalid {
+  
+  &.ng-touched {
+    border-left: 5px solid #a94442
+  }
+  &.ng-untouched {
+    border-left: 5px solid #a94442
+  }
+  
+}
+
+.form-text.ng-invalid.ng-dirty.ng-touched { color: #a94442 }
+.form-text.ng-valid.ng-dirty.ng-touched { color: #1bb1dc }
+.input-invalido { border-left: 5px solid #a94442 !important; }
+.input-valido { border-left: 5px solid #1bb1dc !important }

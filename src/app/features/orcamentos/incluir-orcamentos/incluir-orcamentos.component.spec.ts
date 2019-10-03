@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterComponent } from './footer.component';
+import { IncluirOrcamentosComponent } from './incluir-orcamentos.component';
 
-describe('FooterComponent', () => {
-  let component: FooterComponent;
-  let fixture: ComponentFixture<FooterComponent>;
+describe('IncluirOrcamentosComponent', () => {
+  let component: IncluirOrcamentosComponent;
+  let fixture: ComponentFixture<IncluirOrcamentosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ IncluirOrcamentosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterComponent);
+    fixture = TestBed.createComponent(IncluirOrcamentosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

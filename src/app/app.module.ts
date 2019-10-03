@@ -1,28 +1,48 @@
 // Imports do Angular
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-
-// Imports de Dependencias
+import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 // Imports de Módulos/Componentes/Services
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
-import { FooterComponent } from './template/footer/footer.component';
-import { LoginLogoutComponent } from './template/login-logout/login-logout.component';
+import { SidebarComponent } from './template/sidebar/sidebar.component';
+import { IndexComponent } from './template/index/index.component';
+import { DataTablesModule } from 'angular-datatables';
+import { TableComponent } from './template/table/table.component';
+
+const routes: Routes = [
+  { path: 'orcamentos', loadChildren: () => import('./features/orcamentos/orcamentos.module').then(module => module.OrcamentosModule) },
+  { path: 'servicos', loadChildren: () => import('./features/servicos/servicos.module').then(module => module.ServicosModule) },
+  { path: 'usuarios', loadChildren: () => import('./features/usuarios/usuarios.module').then(module => module.UsuariosModule) },
+  { path: 'clientes', loadChildren: () => import('./features/clientes/clientes.module').then(module => module.ClientesModule) },
+  { path: '**', redirectTo: '' },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    LoginLogoutComponent
+    IndexComponent,
+    SidebarComponent,
+    TableComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
+    DataTablesModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    RouterModule
+  ],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
