@@ -11,12 +11,14 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { IndexComponent } from './template/index/index.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ExercicioComponent } from './template/exercicio/exercicio.component';
 
 const routes: Routes = [
   { path: 'orcamentos', loadChildren: () => import('./features/orcamentos/orcamentos.module').then(module => module.OrcamentosModule) },
   { path: 'servicos', loadChildren: () => import('./features/servicos/servicos.module').then(module => module.ServicosModule) },
   { path: 'usuarios', loadChildren: () => import('./features/usuarios/usuarios.module').then(module => module.UsuariosModule) },
   { path: 'clientes', loadChildren: () => import('./features/clientes/clientes.module').then(module => module.ClientesModule) },
+  { path: '', component: ExercicioComponent },
   { path: '**', redirectTo: '' },
 ];
 
@@ -26,6 +28,7 @@ const routes: Routes = [
     HeaderComponent,
     IndexComponent,
     SidebarComponent,
+    ExercicioComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),

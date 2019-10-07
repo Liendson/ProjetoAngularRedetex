@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <form #formTarefa>
+    <div class="form-group">
+      <label>Título da Tarefa:</label>
+      <input name="titulo" type="text" class="form-control">
+      <label>Data de Entrega:</label>
+      <input name="dataEntrega" type="date" class="form-control">
+      <label>Prioridade:</label>
+      <select name="prioridade" id="" class="form-control">
+         <option value="Normal">
+            Normal
+         </option>
+         <option value="Urgente">
+            Urgente
+         </option>
+         <option value="Imediata">
+            Imediata
+         </option>
+      </select>
+      <label>Conteúdo:</label>
+      <textarea name="conteudo" type="text" class="form-control"></textarea>
+    </div>
+    <div class="btn-group">
+       <button type="button" class="btn btn-primary" (click)="addTarefa(formTarefa)">Incluir</button>
+       <button type="button" class="btn btn-primary" (click)="limparForm(formTarefa)">Limpar</button>
+    </div>
+  </form>
+  <br>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Tarefas Cadastradas</h6>
+    </div>
+    <div class="card-body">
+      <div class="">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered" width="100%" id="table" cellspacing="0">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Título</th>
+              <th>Conteúdo</th>
+              <th>Data de Entrega</th>
+              <th>Prioridade</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tarefa of tarefas" #tableRow>
+              <td><input type="checkbox" (click)="marcaTarefa(tarefa)"></td>
+              <td [ngClass]="{'text-dashed': tarefa.status}">{{ tarefa.titulo }}</td>
+              <td [ngClass]="{'text-dashed': tarefa.status}">{{ tarefa.conteudo }}</td>
+              <td [ngClass]="{'text-dashed': tarefa.status}">{{ tarefa.dataEntrega }}</td>
+              <td [ngClass]="{'text-dashed': tarefa.status}">{{ tarefa.prioridade }}</td>
+              <td><button class="btn btn-danger" (click)="removeTarefa(tarefa.titulo)"><em class="fa fa-remove"></em></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
