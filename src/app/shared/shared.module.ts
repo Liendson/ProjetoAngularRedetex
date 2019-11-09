@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { TextMaskModule } from 'angular2-text-mask';
 
 const sharedModules = [
    CommonModule,
@@ -11,7 +12,8 @@ const sharedModules = [
    HttpClientModule,
    ReactiveFormsModule,
    FormsModule,
-   DataTablesModule
+   DataTablesModule,
+   TextMaskModule
 ];
 
 @NgModule({
