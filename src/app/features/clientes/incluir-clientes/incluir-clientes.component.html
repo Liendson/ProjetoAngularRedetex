@@ -1,52 +1,64 @@
-<!-- Incluir Cliente -->
-<div class="col-md-12">
-    <div class="form-group">
-      <div class="row">
-        <fieldset class="col-md-12">
-          <legend>
-            <i class="fa fa-cog" aria-hidden="true"></i> Incluir Cliente
-          </legend>
-          <div class="col-md-7">
-            <label class="control-label">Nome:</label>
-            <input required name="numeroOs" class="form-control">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-cog" aria-hidden="true"></i> Incluir Cliente</h4>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <form [formGroup]="formulario" (ngSubmit)="inserirDados(formulario)">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4>Dados do Cliente</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="col-md-6">
+                    <label class="control-label">Nome:</label>
+                    <input required class="form-control" formControlName="nomeCliente">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Telefone:</label>
+                    <input required class="form-control" formControlName="telefoneCliente">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Nome da Rua:</label>
+                    <input required class="form-control" formControlName="nomeRua">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="control-label">Nome do Edifício:</label>
+                    <input required class="form-control" formControlName="nomeEdificio">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Número do Edifício:</label>
+                    <input required class="form-control" formControlName="numeroEdificio">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="control-label">Número do Apartamento:</label>
+                    <input required class="form-control" formControlName="numeroApartamento">
+                  </div>
+                  <div class="col-md-12">
+                    <label class="control-label">Ponto de Referência/Observação Adicional:</label>
+                    <textarea required class="form-control" formControlName="pontoReferencia"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12 text-right">
+                    <button class="btn btn-default" type="button" (click)="voltar()">
+                      <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+                    </button>&nbsp;
+                    <button class="btn btn-primary" type="submit">
+                      <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="col-md-5">
-            <label class="control-label">Telefone:</label>
-            <input required name="numeroOs" class="form-control">
-          </div>
-          <div class="col-md-9">
-            <label class="control-label">Endereço:</label>
-            <input required name="numeroOs" class="form-control">
-          </div>
-          <div class="col-md-3">
-            <label class="control-label">Número:</label>
-            <input required name="numeroOs" class="form-control">
-          </div>
-          <div class="col-md-9">
-            <label class="control-label">Nome do Edifício:</label>
-            <input required name="numeroOs" class="form-control">
-          </div>
-          <div class="col-md-3">
-            <label class="control-label">Apartamento:</label>
-            <input required name="numeroOs" class="form-control">
-          </div>
-          <div class="col-md-12">
-            <label class="control-label">Observação Adicional:</label>
-            <textarea required name="numeroOs" class="form-control"></textarea>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="row">
-        <!-- BTN NEXT -->
-        <div class="col-md-12 text-right">
-          <button class="btn btn-default">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
-          </button>&nbsp;
-          <button class="btn btn-primary">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir </button>
         </div>
       </div>
     </div>
   </div>
+</div>

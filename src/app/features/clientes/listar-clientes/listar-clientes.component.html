@@ -11,30 +11,24 @@
               <th><em class="fa fa-cog"></em></th>
               <th>Nome</th>
               <th>Endereço</th>
+              <th>Telefone</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let orcamento of orcamentos">
+            <tr *ngFor="let cliente of clientes">
               <td>
                 <div class="dropdown">
-                  <button class="btn btn-primary" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <button class="btn btn-primary" (click)="editarCliente(cliente.id)">
                     <em class="fa fa-edit small"></em>
                   </button>&nbsp;
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a (click)="editarOrcamento(orcamento.id)">Editar</a></li>
-                    <li><a>Imprimir</a></li>
-                    <li><a>Gerar Recibo</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a>Enviar Medidas</a></li>
-                    <li><a>Concluir Serviço</a></li>
-                  </ul>
-                  <button class="btn btn-danger" (click)="naoImplementada()">
+                  <button class="btn btn-danger" (click)="removerCliente(cliente.id)">
                     <em class="fa fa-remove"></em>
                   </button>
                 </div>
               </td>
-              <td>{{ orcamento.userId }}</td>
-              <td>{{ orcamento.title }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
+              <td>{{ cliente.nome_cliente }}</td>
+              <td>{{ cliente.nome_rua }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
+              <td>{{ cliente.telefone_cliente }}</td>
             </tr>
           </tbody>
         </table>

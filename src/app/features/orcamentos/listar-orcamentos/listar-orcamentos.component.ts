@@ -11,9 +11,9 @@ import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.
 })
 export class ListarOrcamentosComponent implements OnInit {
 
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject();
-  public orcamentos: any[] = [];
+  public dtOptions: DataTables.Settings = {};
+  public dtTrigger: Subject<any> = new Subject();
+  public orcamentos = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -33,7 +33,7 @@ export class ListarOrcamentosComponent implements OnInit {
     };
 
     this.activatedRoute.params.subscribe(() => {
-      const urlRequest = `https://jsonplaceholder.typicode.com/posts/`;
+      const urlRequest = `http://localhost:8080/orcamentos`;
 
       this.http.get(urlRequest).subscribe((orcamento: any[]) => {
         this.orcamentos = orcamento;
@@ -41,9 +41,25 @@ export class ListarOrcamentosComponent implements OnInit {
       });
     });
   }
-
+  
   editarOrcamento(id: number) {
     this.router.navigate([`alterar/${id}`], { relativeTo: this.activatedRoute });
+  }
+
+  removerOrcamento(id: number) {
+
+    const urlRequest = `http://localhost:8080/orcamentos/${id}/remover`;
+
+    for (let i = this.orcamentos.length - 1; i >= 0; i--) {
+      if (this.orcamentos[i].id === id) {
+        this.http.delete(urlRequest).subscribe(
+          (success) => {
+            this.orcamentos.splice(i, 1);
+            this.mensagem.exibirSucesso('Sucesso!', 'Orçamento Removido com sucesso!')
+          },
+          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') });
+      }
+    }
   }
 
   naoImplementada() {

@@ -1,3 +1,65 @@
-<p>
-  editar-clientes works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="fa fa-cog" aria-hidden="true"></i> Editar Cliente</h4>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <form [formGroup]="formulario" (ngSubmit)="editarDados(formulario)">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4>Cliente Nº {{ nrCliente }}</h4>
+                </div>
+                <div class="panel-body">
+                  <div class="col-md-6">
+                    <label class="control-label">Nome do Cliente:</label>
+                    <input formControlName="nomeCliente" required class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="control-label">Telefone do Cliente:</label>
+                    <input formControlName="telefoneCliente" required class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="control-label">Nome da Rua:</label>
+                    <input formControlName="nomeRua" required class="form-control">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="control-label">Nome do Edifício:</label>
+                    <input formControlName="nomeEdificio" required class="form-control">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="control-label">Nº do Edifício:</label>
+                    <input formControlName="numeroEdificio" required class="form-control">
+                  </div>
+                  <div class="col-md-2">
+                    <label class="control-label">Nº do Apartamento:</label>
+                    <input formControlName="numeroApartamento" required class="form-control">
+                  </div>
+                  <div class="col-md-12">
+                    <label class="control-label">Ponto de Referência/Observação Adicional:</label>
+                    <textarea formControlName="obsAdicional" required class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <!-- BTN NEXT -->
+                  <div class="col-md-12 text-right">
+                    <button class="btn btn-default" type="button" (click)="voltar()">
+                      <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+                    </button>&nbsp;
+                    <button class="btn btn-primary" type="submit">
+                      <i class="fa fa-chevron-right" aria-hidden="true"></i> Editar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

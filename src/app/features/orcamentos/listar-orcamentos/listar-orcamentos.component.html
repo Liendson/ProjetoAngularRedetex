@@ -19,26 +19,18 @@
             <tr *ngFor="let orcamento of orcamentos">
               <td>
                 <div class="dropdown">
-                  <button class="btn btn-primary" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <button class="btn btn-primary" (click)="editarOrcamento(orcamento.id)">
                     <em class="fa fa-edit small"></em>
                   </button>&nbsp;
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a (click)="editarOrcamento(orcamento.id)">Editar</a></li>
-                    <li><a>Imprimir</a></li>
-                    <li><a>Gerar Recibo</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a>Enviar Medidas</a></li>
-                    <li><a>Concluir Serviço</a></li>
-                  </ul>
-                  <button class="btn btn-danger" (click)="naoImplementada()">
+                  <button class="btn btn-danger" (click)="removerOrcamento(orcamento.id)">
                     <em class="fa fa-remove"></em>
                   </button>
                 </div>
               </td>
-              <td>{{ orcamento.id }}</td>
-              <td>{{ orcamento.userId }}</td>
-              <td>{{ orcamento.title }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
-              <td class="alert alert-success" align="center">Concluído</td>
+              <td>{{ orcamento.tp_orcamento }}</td>
+              <td>{{ orcamento.nome_cliente }}</td>
+              <td>{{ orcamento.nome_rua }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
+              <td class="alert alert-success" align="center">{{ orcamento.situacao_orcamento }}</td>
             </tr>
           </tbody>
         </table>

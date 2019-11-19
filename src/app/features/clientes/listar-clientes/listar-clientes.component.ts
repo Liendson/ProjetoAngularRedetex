@@ -11,9 +11,9 @@ import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.
 })
 export class ListarClientesComponent implements OnInit {
 
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject();
-  public orcamentos = [];
+  public dtOptions: DataTables.Settings = {};
+  public dtTrigger: Subject<any> = new Subject();
+  public clientes = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -33,17 +33,33 @@ export class ListarClientesComponent implements OnInit {
     };
 
     this.activatedRoute.params.subscribe(() => {
-      const urlRequest = `https://jsonplaceholder.typicode.com/posts/`;
+      const urlRequest = `http://localhost:8080/clientes`;
 
-      this.http.get(urlRequest).subscribe((orcamento: any) => {
-        this.orcamentos = orcamento;
+      this.http.get(urlRequest).subscribe((clientes: any) => {
+        this.clientes = clientes;
         this.dtTrigger.next();
       });
     });
   }
 
-  editarOrcamento(id: number) {
+  editarCliente(id: number) {
     this.router.navigate([`alterar/${id}`], { relativeTo: this.activatedRoute });
+  }
+
+  removerCliente(id: number) {
+
+    const urlRequest = `http://localhost:8080/clientes/${id}/remover`;
+
+    for (let i = this.clientes.length - 1; i >= 0; i--) {
+      if (this.clientes[i].id === id) {
+        this.http.delete(urlRequest).subscribe(
+          (success) => {
+            this.clientes.splice(i, 1);
+            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!')
+          },
+          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') });
+      }
+    }
   }
 
   naoImplementada() {

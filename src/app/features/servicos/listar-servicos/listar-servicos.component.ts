@@ -11,8 +11,8 @@ import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.
 })
 export class ListarServicosComponent implements OnInit {
 
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject();
+  public dtOptions: DataTables.Settings = {};
+  public dtTrigger: Subject<any> = new Subject();
   public servicos = [];
 
   constructor(
@@ -33,7 +33,7 @@ export class ListarServicosComponent implements OnInit {
     };
 
     this.activatedRoute.params.subscribe(() => {
-      const urlRequest = `https://jsonplaceholder.typicode.com/posts/`;
+      const urlRequest = `http://localhost:8080/servicos`;
 
       this.http.get(urlRequest).subscribe((servico: any) => {
         this.servicos = servico;
@@ -44,6 +44,22 @@ export class ListarServicosComponent implements OnInit {
 
   editarServico(id: number) {
     this.router.navigate([`alterar/${id}`], { relativeTo: this.activatedRoute });
+  }
+  
+  removerServico(id: number) {
+
+    const urlRequest = `http://localhost:8080/servicos/${id}/remover`;
+
+    for (let i = this.servicos.length - 1; i >= 0; i--) {
+      if (this.servicos[i].id === id) {
+        this.http.delete(urlRequest).subscribe(
+          (success) => {
+            this.servicos.splice(i, 1);
+            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!')
+          },
+          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') });
+      }
+    }
   }
 
   naoImplementada() {

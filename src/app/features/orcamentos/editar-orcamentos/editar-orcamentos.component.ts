@@ -2,6 +2,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.service';
+import { SharedServicesService } from 'src/app/shared/shared-services/shared-services.service';
 
 @Component({
   selector: 'app-editar-orcamentos',
@@ -10,38 +12,84 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarOrcamentosComponent implements OnInit {
 
+  public URL_ORCAMENTOS = `http://localhost:8080/orcamentos/`;
   public formulario: FormGroup;
+  public nrOrcamento;
 
   constructor(
+    private mensagem: CustomAlertsService,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private services: SharedServicesService
   ) { }
 
   ngOnInit() {
 
     this.formulario = this.formBuilder.group({
-      endereco: [null],
-      numero: [null],
-      nomeEdificio: [null],
+      tipoOrcamento:     [null],
+      nomeCliente:       [null],
+      telefoneCliente:   [null],
+      nomeRua:           [null],
+      cepRua:            [null],
+      numeroEdificio:    [null],
+      nomeEdificio:      [null],
       numeroApartamento: [null],
-      obsAdicional: [null]
+      obsAdicional:      [null],
+      situacaoOrcamento: [null]
     });
 
     this.activatedRoute.params.subscribe((parametros) => {
-      const orcamentoId = parametros[`id`];
-      const urlRequest = `https://jsonplaceholder.typicode.com/posts/${orcamentoId}`;
+      const idOrcamento = parametros[`id`];
+      const urlRequest = this.URL_ORCAMENTOS + idOrcamento;
 
       this.httpClient.get(urlRequest).subscribe((orcamento: any) => {
-        console.log(orcamento);
+        this.nrOrcamento = idOrcamento;
         this.formulario.patchValue({
-          endereco: orcamento.userId,
-          numero: orcamento.id,
-          nomeEdificio: orcamento.title,
-          numeroApartamento: orcamento.id,
-          obsAdicional: orcamento.body
+          tipoOrcamento:     orcamento[0].tp_orcamento,
+          nomeCliente:       orcamento[0].nome_cliente,
+          telefoneCliente:   orcamento[0].telefone_cliente,
+          nomeRua:           orcamento[0].nome_rua,
+          cepRua:            orcamento[0].cep_rua,
+          numeroEdificio:    orcamento[0].numero_edificio,
+          nomeEdificio:      orcamento[0].nome_edificio,
+          numeroApartamento: orcamento[0].apartamento_edificio,
+          obsAdicional:      orcamento[0].ponto_referencia,
+          situacaoOrcamento: orcamento[0].situacao_orcamento
         });
       });
     });
+  }
+
+  editarDados(formulario) {
+
+    if(!this.services.validarDados(formulario, "Orçamento")) {
+      return false;
+    }
+
+    this.formulario.patchValue({
+      tipoOrcamento:      formulario.value.tipoOrcamento,
+      nomeCliente:        formulario.value.nomeCliente,
+      nomeRua:            formulario.value.nomeRua,
+      cepRua:             formulario.value.cepRua,
+      telefoneCliente:    formulario.value.telefoneCliente,
+      numeroEdificio:     formulario.value.numeroEdificio,
+      nomeEdificio:       formulario.value.nomeEdificio,
+      numeroApartamento:  formulario.value.numeroApartamento,
+      obsAdicional:       formulario.value.obsAdicional,
+      situacao_orcamento: formulario.value.situacao_orcamento
+    });
+
+    const urlRequest = this.URL_ORCAMENTOS + this.nrOrcamento + '/alterar';
+
+    this.httpClient.put(urlRequest, this.formulario.value).subscribe(
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Orçamento alterado com sucesso!') },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
+    );
+
+  }
+
+  voltar() {
+    this.services.retornarRota("orcamentos")
   }
 }

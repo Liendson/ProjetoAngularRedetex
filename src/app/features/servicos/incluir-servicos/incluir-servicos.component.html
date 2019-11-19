@@ -1,63 +1,100 @@
-<!-- Incluir/Alterar Cliente -->
-<div class="col-md-12">
-    <div class="form-group">
-      <div class="row">
-        <fieldset class="col-md-12">
-          <legend>
-            <i class="fa fa-cog" aria-hidden="true"></i> Incluir Serviço
-          </legend>
-          <div class="col-md-7">
-            <label class="control-label">Tipo do Serviço:</label>
-            <select required class="form-control">
-              <option value="">Persiana</option>
-              <option value="">Rede de Proteção</option>
-              <option value="">Tela Mosquiteira</option>
-            </select>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><i class="fa fa-cog" aria-hidden="true"></i> Incluir Serviço</h4>
           </div>
-          <div class="col-md-2">
-            <label class="control-label">Atribuir Orçamento?:</label>
-            <select required class="form-control">
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
+          <div class="panel-body">
+            <div class="form-group">
+              <form [formGroup]="formulario" (ngSubmit)="inserirDados(formulario)">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4>Dados do Serviço</h4>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <label class="control-label">Tipo do Serviço:</label>
+                      <select required class="form-control" formControlName="tipoServico">
+                        <option value="Persiana">Persiana</option>
+                        <option value="Rede de Proteção">Rede de Proteção</option>
+                        <option value="Tela Mosquiteira">Tela Mosquiteira</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Atribuir Orçamento?:</label>
+                      <select required class="form-control" formControlName="ehOrcamento">
+                        <option value="Sim">Sim</option>
+                        <option value="Nao">Não</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Código do Orçamento:</label>
+                      <input required class="form-control" formControlName="codOrcamento">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4>Dados do Cliente</h4>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <label class="control-label">Nome do Cliente:</label>
+                      <input required class="form-control" formControlName="nomeClienteServico">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="control-label">Telefone do Cliente:</label>
+                      <input required class="form-control" formControlName="telefoneClienteServico">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4>Dados do Endereço</h4>
+                  </div>
+                  <div class="panel-body">
+                    <div class="col-md-6">
+                      <label class="control-label">Nome da Rua:</label>
+                      <input required class="form-control" formControlName="nomeRuaServico">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">CEP:</label>
+                      <input required class="form-control" formControlName="cepRuaServico">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Número do Edifício:</label>
+                      <input required class="form-control" formControlName="numeroEdificioServico">
+                    </div>
+                    <div class="col-md-9">
+                      <label class="control-label">Nome do Edifício:</label>
+                      <input required class="form-control" formControlName="nomeEdificioServico">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="control-label">Número do Apartamento:</label>
+                      <input required class="form-control" formControlName="numeroApartamentoServico">
+                    </div>
+                    <div class="col-md-12">
+                      <label class="control-label">Ponto de Referência/Observação Adicional:</label>
+                      <textarea required class="form-control" formControlName="pontoReferenciaServico"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-12 text-right">
+                      <button class="btn btn-default" type="button" (click)="voltar()">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+                      </button>&nbsp;
+                      <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="col-md-3">
-            <label class="control-label">Código do Orçamento:</label>
-            <input required class="form-control">
-          </div>
-          <div class="col-md-9">
-            <label class="control-label">Endereço:</label>
-            <input required class="form-control">
-          </div>
-          <div class="col-md-3">
-            <label class="control-label">Número:</label>
-            <input required class="form-control">
-          </div>
-          <div class="col-md-9">
-            <label class="control-label">Nome do Edifício:</label>
-            <input required class="form-control">
-          </div>
-          <div class="col-md-3">
-            <label class="control-label">Apartamento:</label>
-            <input required class="form-control">
-          </div>
-          <div class="col-md-12">
-            <label class="control-label">Ponto de Referência/Observação Adicional:</label>
-            <textarea class="form-control"></textarea>
-          </div>
-        </fieldset>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="row">
-        <!-- BTN NEXT -->
-        <div class="col-md-12 text-right">
-          <button class="btn btn-default">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
-          </button>&nbsp;
-          <button class="btn btn-primary">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir
-          </button>
         </div>
       </div>
     </div>

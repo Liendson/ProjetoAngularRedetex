@@ -31,7 +31,7 @@ const routes: Routes = [
     ExercicioComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     BrowserModule,
     HttpClientModule,
     DataTablesModule
