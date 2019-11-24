@@ -1,0 +1,14 @@
+
+<form [formGroup]="usuario" (ngSubmit)="realizarLogin(usuario)">
+    <div class="row">
+        <label for="">Usuário</label>
+        <input type="text" formControlName="nome">
+    </div>
+    
+    <div class="row">
+        <label for="">Senha</label>
+        <input type="password" formControlName="senha">
+    </div>
+    
+    <button class="btn btn-danger" type="submit">Login</button>
+</form>
