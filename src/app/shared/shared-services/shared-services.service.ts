@@ -11,16 +11,16 @@ export class SharedServicesService {
     private mensagemAlerta: CustomAlertsService,
     private router: Router
   ) { }
-    
+
   validarDados(formulario, usuario: string) {
-    if (formulario.status == "INVALID") {
-      this.mensagemAlerta.exibirErro('Erro!', `Preencha todos os dados do ${usuario}`)
+    if (formulario.status === 'INVALID') {
+      this.mensagemAlerta.exibirErro('Erro!', `Preencha todos os dados do ${usuario}`);
       return false;
     }
     return true;
   }
 
   retornarRota(rota: string) {
-    this.router.navigate([`${rota}/`])
+    this.router.navigate([`${rota}/`]);
   }
 }

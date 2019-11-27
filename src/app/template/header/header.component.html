@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand topbar static-top navbar-fixed-top">
+<nav class="navbar navbar-expand topbar static-top navbar-fixed-top" *ngIf="currentUser">  
 
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
     <i class="fa fa-bars"></i>
@@ -10,7 +10,7 @@
 
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Liendson Douglas</span>
+        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuário</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
         <a class="dropdown-item" (click)="naoImplementada()">
@@ -20,7 +20,7 @@
           Configurações
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="naoImplementada()">
+        <a class="dropdown-item" (click)="fazerLogout()">
           Sair do Sistema
         </a>
       </div>

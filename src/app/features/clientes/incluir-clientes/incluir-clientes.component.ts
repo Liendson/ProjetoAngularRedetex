@@ -37,7 +37,7 @@ export class IncluirClientesComponent implements OnInit {
 
   inserirDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Cliente")) {
+    if (!this.services.validarDados(formulario, 'Cliente')) {
       return false;
     }
 
@@ -52,13 +52,13 @@ export class IncluirClientesComponent implements OnInit {
     });
 
     this.httpClient.post(this.urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Cliente incluído com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
-    )
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Cliente incluído com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
+    );
   }
 
   voltar() {
-    this.services.retornarRota("clientes")
+    this.services.retornarRota('clientes');
   }
 
 }

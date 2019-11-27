@@ -13,7 +13,7 @@ const sharedModules = [
    ReactiveFormsModule,
    FormsModule,
    DataTablesModule,
-   TextMaskModule
+   TextMaskModule,
 ];
 
 @NgModule({
