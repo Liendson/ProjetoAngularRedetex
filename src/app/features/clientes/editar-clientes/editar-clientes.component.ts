@@ -43,13 +43,13 @@ export class EditarClientesComponent implements OnInit {
       this.httpClient.get(urlRequest).subscribe((cliente: any) => {
         this.nrCliente = idCliente;
         this.formulario.patchValue({
-          nomeCliente:       cliente[0].nome_cliente,
-          nomeRua:           cliente[0].nome_rua,
-          telefoneCliente:   cliente[0].telefone_cliente,
-          numeroEdificio:    cliente[0].numero_edificio,
-          nomeEdificio:      cliente[0].nome_edificio,
-          numeroApartamento: cliente[0].apartamento_edificio,
-          obsAdicional:      cliente[0].ponto_referencia
+          nomeCliente:       cliente[0].nomeCliente,
+          nomeRua:           cliente[0].nomeRuaCliente,
+          telefoneCliente:   cliente[0].telefoneCliente,
+          numeroEdificio:    cliente[0].numEdificioCliente,
+          nomeEdificio:      cliente[0].nomeEdificioCliente,
+          numeroApartamento: cliente[0].aptoEdificioCliente,
+          obsAdicional:      cliente[0].pontoReferenciaCliente
         });
       });
     });
@@ -57,7 +57,7 @@ export class EditarClientesComponent implements OnInit {
 
   editarDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Cliente")) {
+    if (!this.services.validarDados(formulario, 'Cliente')) {
       return false;
     }
 
@@ -65,23 +65,23 @@ export class EditarClientesComponent implements OnInit {
       nomeCliente:       formulario.value.nomeCliente,
       nomeRua:           formulario.value.nomeRua,
       telefoneCliente:   formulario.value.telefoneCliente,
-      numeroEdificio:    formulario.value.numeroEdificio,
-      nomeEdificio:      formulario.value.nomeEdificio,
-      numeroApartamento: formulario.value.numeroApartamento,
+      numeroEdificio:    formulario.value.numeroEdificioCliente,
+      nomeEdificio:      formulario.value.nomeEdificioCliente,
+      numeroApartamento: formulario.value.numeroApartamentoCliente,
       obsAdicional:      formulario.value.obsAdicional
     });
 
     const urlRequest = this.URL_CLIENTES + this.nrCliente + '/alterar';
 
     this.httpClient.put(urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Cliente alterado com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Cliente alterado com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
     );
 
   }
 
   voltar() {
-    this.services.retornarRota("clientes");
+    this.services.retornarRota('clientes');
   }
 
 }

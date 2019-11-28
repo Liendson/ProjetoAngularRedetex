@@ -46,16 +46,16 @@ export class EditarServicosComponent implements OnInit {
       this.httpClient.get(urlRequest).subscribe((servico: any) => {
         this.nrServico = idServico;
         this.formulario.patchValue({
-          tipoServico:       servico[0].tp_servico,
-          nomeCliente:       servico[0].nome_cliente,
-          nomeRua:           servico[0].nome_rua,
-          cepRua:            servico[0].cep_rua,
-          telefoneCliente:   servico[0].telefone_cliente,
-          numeroEdificio:    servico[0].numero_edificio,
-          nomeEdificio:      servico[0].nome_edificio,
-          numeroApartamento: servico[0].apartamento_edificio,
-          obsAdicional:      servico[0].ponto_referencia,
-          situacaoServico:   servico[0].situacao_servico
+          tipoServico:       servico[0].tipoServico,
+          nomeCliente:       servico[0].nomeClienteServico,
+          nomeRua:           servico[0].nomeRuaServico,
+          cepRua:            servico[0].cepRuaServico,
+          telefoneCliente:   servico[0].telefoneClienteServico,
+          numeroEdificio:    servico[0].numeroEdificioServico,
+          nomeEdificio:      servico[0].nomeEdificioServico,
+          numeroApartamento: servico[0].apartamentoEdificioServico,
+          obsAdicional:      servico[0].pontoReferenciaServico,
+          situacaoServico:   servico[0].situacaoServico
         });
       });
     });
@@ -63,7 +63,7 @@ export class EditarServicosComponent implements OnInit {
 
   editarDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Serviços")) {
+    if (!this.services.validarDados(formulario, 'Serviços')) {
       return false;
     }
 
@@ -83,12 +83,12 @@ export class EditarServicosComponent implements OnInit {
     const urlRequest = this.URL_SERVICOS + this.nrServico + '/alterar';
 
     this.httpClient.put(urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Serviço alterado com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Serviço alterado com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
     );
   }
-  
+
   voltar() {
-    this.services.retornarRota("servicos")    
+    this.services.retornarRota('servicos');
   }
 }

@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'usuarios', loadChildren: () => import('./features/usuarios/usuarios.module').then(module => module.UsuariosModule), canActivate: [GuardsGuard] },
   { path: 'clientes', loadChildren: () => import('./features/clientes/clientes.module').then(module => module.ClientesModule), canActivate: [GuardsGuard] },
   { path: 'login', component: LoginComponent },
-  { path: '', component: IndexComponent },
+  { path: '', component: IndexComponent, canActivate: [GuardsGuard] },
   { path: '**', redirectTo: 'login' },
 ];
 

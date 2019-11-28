@@ -46,16 +46,16 @@ export class EditarOrcamentosComponent implements OnInit {
       this.httpClient.get(urlRequest).subscribe((orcamento: any) => {
         this.nrOrcamento = idOrcamento;
         this.formulario.patchValue({
-          tipoOrcamento:     orcamento[0].tp_orcamento,
-          nomeCliente:       orcamento[0].nome_cliente,
-          telefoneCliente:   orcamento[0].telefone_cliente,
-          nomeRua:           orcamento[0].nome_rua,
-          cepRua:            orcamento[0].cep_rua,
-          numeroEdificio:    orcamento[0].numero_edificio,
-          nomeEdificio:      orcamento[0].nome_edificio,
-          numeroApartamento: orcamento[0].apartamento_edificio,
-          obsAdicional:      orcamento[0].ponto_referencia,
-          situacaoOrcamento: orcamento[0].situacao_orcamento
+          tipoOrcamento:     orcamento[0].tipoOrcamento,
+          nomeCliente:       orcamento[0].nomeClienteOrcamento,
+          telefoneCliente:   orcamento[0].telefoneClienteOrcamento,
+          nomeRua:           orcamento[0].nomeRuaOrcamento,
+          cepRua:            orcamento[0].cepRuaOrcamento,
+          numeroEdificio:    orcamento[0].numeroEdificioOrcamento,
+          nomeEdificio:      orcamento[0].nomeEdificioOrcamento,
+          numeroApartamento: orcamento[0].apartamentoEdificioOrcamento,
+          obsAdicional:      orcamento[0].pontoReferenciaOrcamento,
+          situacaoOrcamento: orcamento[0].situacaoOrcamento
         });
       });
     });
@@ -63,7 +63,7 @@ export class EditarOrcamentosComponent implements OnInit {
 
   editarDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Orçamento")) {
+    if (!this.services.validarDados(formulario, 'Orçamento')) {
       return false;
     }
 
@@ -83,13 +83,13 @@ export class EditarOrcamentosComponent implements OnInit {
     const urlRequest = this.URL_ORCAMENTOS + this.nrOrcamento + '/alterar';
 
     this.httpClient.put(urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Orçamento alterado com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Orçamento alterado com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
     );
 
   }
 
   voltar() {
-    this.services.retornarRota("orcamentos")
+    this.services.retornarRota('orcamentos');
   }
 }

@@ -25,8 +25,6 @@ export class IncluirServicosComponent implements OnInit {
 
     this.formulario = this.formBuilder.group({
       tipoServico:              [null],
-      ehOrcamento:              [null],
-      codOrcamento:             [null],
       nomeClienteServico:       [null],
       telefoneClienteServico:   [null],
       nomeRuaServico:           [null],
@@ -41,15 +39,13 @@ export class IncluirServicosComponent implements OnInit {
 
   inserirDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Serviço")) {
+    if (!this.services.validarDados(formulario, 'Serviço')) {
       return false;
-    }    
+    }
 
     this.formulario = this.formBuilder.group({
-      
+
       tipoServico:              [formulario.value.tipoServico],
-      ehOrcamento:              [formulario.value.ehOrcamento],
-      codOrcamento:             [formulario.value.codOrcamento],
       nomeClienteServico:       [formulario.value.nomeClienteServico],
       telefoneClienteServico:   [formulario.value.telefoneClienteServico],
       nomeRuaServico:           [formulario.value.nomeRuaServico],
@@ -61,13 +57,13 @@ export class IncluirServicosComponent implements OnInit {
     });
 
     this.httpClient.post(this.urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Serviço incluído com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
-    )
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Serviço incluído com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
+    );
   }
 
   voltar() {
-    this.services.retornarRota("servicos")
+    this.services.retornarRota('servicos');
   }
 
 }

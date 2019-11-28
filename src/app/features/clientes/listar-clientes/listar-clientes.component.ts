@@ -55,9 +55,9 @@ export class ListarClientesComponent implements OnInit {
         this.http.delete(urlRequest).subscribe(
           (success) => {
             this.clientes.splice(i, 1);
-            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!')
+            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!');
           },
-          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') });
+          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); });
       }
     }
   }

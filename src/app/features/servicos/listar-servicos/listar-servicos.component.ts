@@ -45,7 +45,7 @@ export class ListarServicosComponent implements OnInit {
   editarServico(id: number) {
     this.router.navigate([`alterar/${id}`], { relativeTo: this.activatedRoute });
   }
-  
+
   removerServico(id: number) {
 
     const urlRequest = `http://localhost:8080/servicos/${id}/remover`;
@@ -55,9 +55,9 @@ export class ListarServicosComponent implements OnInit {
         this.http.delete(urlRequest).subscribe(
           (success) => {
             this.servicos.splice(i, 1);
-            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!')
+            this.mensagem.exibirSucesso('Sucesso!', 'Cliente Removido com sucesso!');
           },
-          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') });
+          (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); });
       }
     }
   }

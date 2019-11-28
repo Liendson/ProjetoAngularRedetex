@@ -25,7 +25,6 @@ export class IncluirOrcamentosComponent implements OnInit {
 
     this.formulario = this.formBuilder.group({
       tipoOrcamento:              [null],
-      ehCadastrado:               [null],
       nomeClienteOrcamento:       [null],
       nomeRuaOrcamento:           [null],
       cepRuaOrcamento:            [null],
@@ -40,13 +39,12 @@ export class IncluirOrcamentosComponent implements OnInit {
 
   inserirDados(formulario) {
 
-    if(!this.services.validarDados(formulario, "Orçamento")) {
+    if (!this.services.validarDados(formulario, 'Orçamento')) {
       return false;
     }
 
     this.formulario = this.formBuilder.group({
       tipoOrcamento:              [formulario.value.tipoOrcamento],
-      ehCadastrado:               [formulario.value.ehCadastrado],
       nomeClienteOrcamento:       [formulario.value.nomeClienteOrcamento],
       nomeRuaOrcamento:           [formulario.value.nomeRuaOrcamento],
       cepRuaOrcamento:            [formulario.value.cepRuaOrcamento],
@@ -58,13 +56,13 @@ export class IncluirOrcamentosComponent implements OnInit {
     });
 
     this.httpClient.post(this.urlRequest, this.formulario.value).subscribe(
-      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Orçamento incluído com sucesso!') },
-      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!') }
-    )
+      (success) => { this.mensagem.exibirSucesso('Sucesso!', 'Orçamento incluído com sucesso!'); },
+      (error) => { this.mensagem.exibirErro('Erro!', 'Contate os administradores do sistema!'); }
+    );
   }
 
   voltar() {
-    this.services.retornarRota("orcamentos");
+    this.services.retornarRota('orcamentos');
   }
 
 }
