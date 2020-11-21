@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CustomAlertsService } from '../custom-alerts/custom-alerts.service';
+import { CustomAlertsService } from './custom-alerts.service';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,9 +12,9 @@ export class SharedServicesService {
     private router: Router
   ) { }
 
-  validarDados(formulario, usuario: string) {
+  validarDados(formulario, label: string) {
     if (formulario.status === 'INVALID') {
-      this.mensagemAlerta.exibirErro('Erro!', `Preencha todos os dados do ${usuario}`);
+      this.mensagemAlerta.exibirErro('Erro!', `Preencha todos os dados do ${label}`);
       return false;
     }
     return true;

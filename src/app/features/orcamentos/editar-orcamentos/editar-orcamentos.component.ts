@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
 import { SharedServicesService } from 'src/app/shared/shared-services/shared-services.service';
 
 @Component({

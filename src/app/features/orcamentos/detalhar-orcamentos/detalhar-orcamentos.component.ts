@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
 
 @Component({
-  selector: 'app-listar-orcamentos',
-  templateUrl: './listar-orcamentos.component.html',
-  styleUrls: ['./listar-orcamentos.component.scss']
+  selector: 'app-detalhar-orcamentos',
+  templateUrl: './detalhar-orcamentos.component.html',
+  styleUrls: ['./detalhar-orcamentos.component.scss']
 })
-export class ListarOrcamentosComponent implements OnInit {
+export class DetalharOrcamentoComponent implements OnInit {
 
   public dtOptions: DataTables.Settings = {};
   public dtTrigger: Subject<any> = new Subject();

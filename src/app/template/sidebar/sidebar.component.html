@@ -1,16 +1,19 @@
 <div id="wrapper">
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" *ngIf="currentUser" >
-
-    <a class="sidebar-brand d-flex align-items-center justify-content-left" href="">
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-left">
       <div class="sidebar-brand-text mx-3"><img class="img" src="..\..\assets\images\REDETEX-NME.png"></div>
     </a>
-
     <hr class="sidebar-divider">
-
     <div class="sidebar-heading">
       Menu Principal
     </div>
 
+    <li class="nav-item">
+      <a class="nav-link">
+        <i class="fa fa-cog"></i>
+        <span (click)="mudarRota('caixa-de-servicos')">Caixa de Servicos</span>
+      </a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" data-target="#collapseOrcamento" aria-expanded="true" aria-controls="collapseOrcamento">
         <i class="fa fa-cog"></i>
@@ -18,40 +21,38 @@
       </a>
       <div id="collapseOrcamento" class="collapse" aria-labelledby="headingOrcamento" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" (click)="mudarRota('orcamentos/incluir')">Novo Orçamento</a>
-          <a class="collapse-item" (click)="mudarRota('orcamentos')">Buscar Orçamento</a>
+          <a class="collapse-item" (click)="mudarRota('orcamentos/incluir')">Agendar Orçamento</a>
+          <a class="collapse-item" (click)="mudarRota('orcamentos/consultar')">Consultar Orçamentos</a>
         </div>
       </div>
     </li>
-
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseServicos" aria-expanded="true" aria-controls="collapseServicos">
         <i class="fa fa-wrench"></i>
         <span>Serviços</span>
       </a>
       <div id="collapseServicos" class="collapse" aria-labelledby="headingServicos" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" (click)="mudarRota('servicos/incluir')">Novo Serviço</a>
+          <a class="collapse-item" (click)="mudarRota('servicos/incluir')">Incluir Novo Serviço</a>
+          <a class="collapse-item" (click)="mudarRota('servicos')">Listar Serviços</a>
           <a class="collapse-item" (click)="mudarRota('servicos')">Buscar Serviço</a>
         </div>
       </div>
-    </li>
-
-    <li class="nav-item">
+    </li> -->
+    <!-- <li class="nav-item">
       <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseClientes" aria-expanded="true" aria-controls="collapseClientes">
         <i class="fa fa-user"></i>
         <span>Clientes</span>
       </a>
       <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" (click)="mudarRota('clientes/incluir')">Novo Cliente</a>
+          <a class="collapse-item" (click)="mudarRota('clientes/incluir')">Incluir Novo Cliente</a>
+          <a class="collapse-item" (click)="mudarRota('clientes')">Listar Clientes</a>
           <a class="collapse-item" (click)="mudarRota('clientes')">Buscar Cliente</a>
         </div>
       </div>
-    </li>
-
+    </li> -->
   </ul>
-
   <div class="container">
     <div class="row">
       <div class="col-md-12 alinhar">
@@ -59,5 +60,4 @@
       </div>
     </div>
   </div>
-  
 </div>

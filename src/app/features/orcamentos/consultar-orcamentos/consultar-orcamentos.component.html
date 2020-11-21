@@ -2,7 +2,7 @@
   <form [formGroup]="formulario">
     <div class="card border-left-info-small h-100">
       <div class="card-header">
-        <h4><i class="fa fa-cog color-info" aria-hidden="true"></i> Agendar Orçamento</h4>
+        <h4><i class="fa fa-search color-info" aria-hidden="true"></i> Consultar Orçamento</h4>
       </div>
       <div class="card-body">
         <div class="row no-gutters align-items-center">
@@ -13,8 +13,12 @@
               </div>
               <div class="card-body">
                 <div class="col-md-3">
+                  <label class="control-label">Número do Orçamento</label>
+                  <input class="form-control" formControlName="numeroOrcamento">
+                </div>
+                <div class="col-md-3">
                   <label class="control-label">Tipo do Orçamento:</label>
-                  <select required class="form-control" formControlName="tipoOrcamento">
+                  <select class="form-control" formControlName="tipoOrcamento">
                     <option [ngValue]="0">Rede de Proteção</option>
                     <option [ngValue]="1">Persiana</option>
                     <option [ngValue]="2">Cortina</option>
@@ -22,14 +26,14 @@
                     <option [ngValue]="4">Box</option>
                   </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <label class="control-label">Nome do Cliente:</label>
-                  <input required class="form-control" formControlName="nomeClienteOrcamento">
+                  <input class="form-control" formControlName="nomeClienteOrcamento">
                 </div>
                 <div class="col-md-3">
                   <label class="control-label">Telefone do Cliente:</label>
                   <i class="fa fa-search color-info icon-input" aria-hidden="true" (click)="consultarCliente(numeroTelefoneCliente.value)"></i>
-                  <input required class="form-control" formControlName="numeroTelefoneCliente" [textMask]="{ mask: maskTelefone }">
+                  <input class="form-control" formControlName="numeroTelefoneCliente" [textMask]="{ mask: maskTelefone }">
                 </div>
               </div>
             </div>
@@ -40,29 +44,29 @@
               <div class="card-body">
                 <div class="col-md-6">
                   <label class="control-label">Nome da Rua:</label>
-                  <input required class="form-control" formControlName="nomeRuaOrcamento">
+                  <input class="form-control" formControlName="nomeRuaOrcamento">
                 </div>
                 <div class="col-md-3">
                   <label class="control-label">CEP:</label>
                   <i class="fa fa-search color-info icon-input" aria-hidden="true" (click)="consultarCEP(cepRuaOrcamento.value)"></i>
-                  <input required class="form-control" formControlName="cepRuaOrcamento" [textMask]="{ mask: maskCEP }">
-                </div>
-                <div class="col-md-3">
-                  <label class="control-label">Número do Edifício/Casa:</label>
-                  <input required type="number" class="form-control" formControlName="numeroEdificioOrcamento">
-                </div>
-                <div class="col-md-6">
-                  <label class="control-label">Nome do Edifício:</label>
-                  <input required class="form-control" formControlName="nomeEdificioOrcamento">
+                  <input class="form-control" formControlName="cepRuaOrcamento" [textMask]="{ mask: maskCEP }">
                 </div>
                 <div class="col-md-3">
                   <label class="control-label">Bairro:</label>
-                  <select required class="form-control" formControlName="bairroOrcamento">
+                  <select class="form-control" formControlName="bairroOrcamento">
                   </select>
                 </div>
+                <div class="col-md-6">
+                  <label class="control-label">Nome do Edifício:</label>
+                  <input class="form-control" formControlName="nomeEdificioOrcamento">
+                </div>
                 <div class="col-md-3">
-                  <label class="control-label">Número do Apartamento:</label>
-                  <input required type="number" class="form-control" formControlName="numeroApartamentoOrcamento">
+                  <label class="control-label">Data Inicial:</label>
+                  <my-date-picker placeholder="dd/mm/aaaa" [locale]="'pt-br'" formControlName="periodoInicialOrcamento"></my-date-picker>
+                </div>
+                <div class="col-md-3">
+                  <label class="control-label">Data Final:</label>
+                  <my-date-picker placeholder="dd/mm/aaaa" [locale]="'pt-br'" formControlName="periodoFinalOrcamento"></my-date-picker>
                 </div>
                 <div class="col-md-12">
                   <label class="control-label">Ponto de Referência/Observação Adicional:</label>
@@ -74,9 +78,13 @@
         </div>
       </div>
       <div class="card-footer">
+        <!-- TODO: criar componente desse btn group -->
         <div class="col-md-12 text-center">
-          <button class="btn btn-primary" type="button" (click)="inserirDados(formulario)">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i> Agendar
+          <button class="btn btn-default" type="button" (click)="limparCampos()">
+            <i class="fa fa-eraser" aria-hidden="true"></i> Limpar
+          </button>
+          <button class="btn btn-primary" type="button" (click)="consultar(formulario)">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i> Consultar
           </button>
         </div>
       </div>

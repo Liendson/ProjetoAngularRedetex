@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { CustomAlertsService } from 'src/app/shared/custom-alerts/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
 import { SharedServicesService } from 'src/app/shared/shared-services/shared-services.service';
 
 @Component({

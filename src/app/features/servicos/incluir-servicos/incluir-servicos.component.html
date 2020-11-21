@@ -1,90 +1,79 @@
-<div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4><i class="fa fa-cog" aria-hidden="true"></i> Incluir Serviço</h4>
-          </div>
-          <div class="panel-body">
-            <div class="form-group">
-              <form [formGroup]="formulario" (ngSubmit)="inserirDados(formulario)">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4>Dados do Serviço</h4>
-                  </div>
-                  <div class="panel-body">
-                    <div class="col-md-12">
-                      <label class="control-label">Tipo do Serviço:</label>
-                      <select required class="form-control" formControlName="tipoServico">
-                        <option value="Persiana">Persiana</option>
-                        <option value="Rede de Proteção">Rede de Proteção</option>
-                        <option value="Tela Mosquiteira">Tela Mosquiteira</option>
-                      </select>
-                    </div>
-                  </div>
+<div class="col-12 mb-4">
+  <form [formGroup]="formulario">
+    <div class="card border-left-info-small h-100">
+      <div class="card-header">
+        <h4><i class="fa fa-cog color-info" aria-hidden="true"></i> Agendar Serviço</h4>
+      </div>
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="card border-left-info-small ml-2 mb-3">
+              <div class="card-header">
+                <h4>Dados do Serviço</h4>
+              </div>
+              <div class="card-body">
+                <div class="col-md-3">
+                  <label class="control-label">Tipo do Serviço:</label>
+                  <select required class="form-control" formControlName="tipoServico">
+                    <option value="Persiana">Persiana</option>
+                    <option value="Rede de Proteção">Rede de Proteção</option>
+                    <option value="Tela Mosquiteira">Tela Mosquiteira</option>
+                  </select>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4>Dados do Cliente</h4>
-                  </div>
-                  <div class="panel-body">
-                    <div class="col-md-6">
-                      <label class="control-label">Nome do Cliente:</label>
-                      <input required class="form-control" formControlName="nomeClienteServico">
-                    </div>
-                    <div class="col-md-6">
-                      <label class="control-label">Telefone do Cliente:</label>
-                      <input required class="form-control" formControlName="telefoneClienteServico">
-                    </div>
-                  </div>
+                <div class="col-md-6">
+                  <label class="control-label">Nome do Cliente:</label>
+                  <input required class="form-control" formControlName="nomeClienteServico">
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4>Dados do Endereço</h4>
-                  </div>
-                  <div class="panel-body">
-                    <div class="col-md-6">
-                      <label class="control-label">Nome da Rua:</label>
-                      <input required class="form-control" formControlName="nomeRuaServico">
-                    </div>
-                    <div class="col-md-3">
-                      <label class="control-label">CEP:</label>
-                      <input required class="form-control" formControlName="cepRuaServico">
-                    </div>
-                    <div class="col-md-3">
-                      <label class="control-label">Número do Edifício:</label>
-                      <input required class="form-control" formControlName="numeroEdificioServico">
-                    </div>
-                    <div class="col-md-9">
-                      <label class="control-label">Nome do Edifício:</label>
-                      <input required class="form-control" formControlName="nomeEdificioServico">
-                    </div>
-                    <div class="col-md-3">
-                      <label class="control-label">Número do Apartamento:</label>
-                      <input required class="form-control" formControlName="numeroApartamentoServico">
-                    </div>
-                    <div class="col-md-12">
-                      <label class="control-label">Ponto de Referência/Observação Adicional:</label>
-                      <textarea required class="form-control" formControlName="pontoReferenciaServico"></textarea>
-                    </div>
-                  </div>
+                <div class="col-md-3">
+                  <label class="control-label">Telefone do Cliente:</label>
+                  <input required class="form-control" formControlName="telefoneClienteServico">
                 </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-md-12 text-right">
-                      <button class="btn btn-default" type="button" (click)="voltar()">
-                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
-                      </button>&nbsp;
-                      <button class="btn btn-primary" type="submit">
-                        <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir
-                      </button>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="card border-left-info-small ml-2">
+              <div class="card-header">
+                <h4>Dados do Endereço</h4>
+              </div>
+              <div class="card-body">
+                <div class="col-md-6">
+                  <label class="control-label">Nome da Rua:</label>
+                  <input required class="form-control" formControlName="nomeRuaOrcamento">
                 </div>
-              </form>
+                <div class="col-md-3">
+                  <label class="control-label">CEP:</label>
+                  <input required class="form-control" formControlName="cepRuaOrcamento">
+                </div>
+                <div class="col-md-3">
+                  <label class="control-label">Número do Edifício/Casa:</label>
+                  <input required class="form-control" formControlName="numeroEdificioOrcamento">
+                </div>
+                <div class="col-md-9">
+                  <label class="control-label">Nome do Edifício:</label>
+                  <input required class="form-control" formControlName="nomeEdificioOrcamento">
+                </div>
+                <div class="col-md-3">
+                  <label class="control-label">Número do Apartamento:</label>
+                  <input required class="form-control" formControlName="numeroApartamentoOrcamento">
+                </div>
+                <div class="col-md-12">
+                  <label class="control-label">Ponto de Referência/Observação Adicional:</label>
+                  <textarea required class="form-control" formControlName="pontoReferenciaOrcamento"></textarea>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="card-footer">
+        <div class="col-md-12 text-center">
+          <button class="btn btn-default" type="button" (click)="voltar()">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i> Voltar
+          </button>&nbsp;
+          <button class="btn btn-primary" type="button" (click)="inserirDados(formulario)">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i> Incluir
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
+  </form>
+</div>
