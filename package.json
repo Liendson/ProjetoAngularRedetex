@@ -24,7 +24,7 @@
     "angular2-text-mask": "^9.0.0",
     "bootstrap3": "^3.3.5",
     "core-js": "^2.5.4",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.20",
     "jquery": "^3.4.1",
     "mydatepicker": "^2.6.6",
