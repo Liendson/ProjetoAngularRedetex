@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
-import { SharedServicesService } from 'src/app/shared/shared-services/shared-services.service';
+import { CustomAlertsService } from 'src/app/shared/services/custom-alerts.service';
+import { SharedServicesService } from 'src/app/shared/services/shared-services.service';
 
 @Component({
   selector: 'app-editar-servicos',

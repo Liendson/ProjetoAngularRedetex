@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/services/custom-alerts.service';
 
 @Component({
   selector: 'app-listar-clientes',

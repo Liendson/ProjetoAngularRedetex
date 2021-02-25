@@ -11,6 +11,7 @@ import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { IndexComponent } from './template/index/index.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CaixaDeEntradaComponent } from './features/caixa-de-entrada/caixa-de-entrada.component';
 
 const routes: Routes = [
   {
@@ -30,9 +31,13 @@ const routes: Routes = [
     loadChildren: () => import('./features/clientes/clientes.module').then(module => module.ClientesModule),
   },
   {
+    path: 'caixa-de-entrada',
+    component: CaixaDeEntradaComponent,
+  },
+  {
     path: '',
     component: IndexComponent,
-  },
+  }
 ];
 
 @NgModule({
@@ -40,6 +45,7 @@ const routes: Routes = [
     AppComponent,
     IndexComponent,
     SidebarComponent,
+    CaixaDeEntradaComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),

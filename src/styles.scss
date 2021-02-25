@@ -5,6 +5,31 @@ html {
   font-size: 16px !important;
 }
 
+.dropdown-menu-component > li > a {
+  display: block;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #686666;
+  white-space: nowrap;
+  padding: 5px 20px;
+}
+
+.dropdown-menu-component > li > a:hover {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #686666;
+  white-space: nowrap;
+  background-color: #e8e8e8 ;
+}
+
+.dropdown-menu-component > li > a > i {
+  padding-right: 5%;
+}
+
 body {
   
   color: #444;

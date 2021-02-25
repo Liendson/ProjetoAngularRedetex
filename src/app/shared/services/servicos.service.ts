@@ -4,21 +4,21 @@ import { BaseService } from './base-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class OrcamentosService {
+export class ServicosService {
 
-  public urlController = '/orcamentos'
+  public urlController = '/servicos'
 
   constructor(private baseService: BaseService) { }
 
-  salvar(orcamento) {
-    return this.baseService.post(`${this.urlController}/salvar`, orcamento)
+  salvar(servico) {
+    return this.baseService.post(`${this.urlController}/salvar`, servico)
   }
 
   listar() {
     return this.baseService.get(`${this.urlController}/buscar`)
   }
 
-  buscar(id: string) {
+  detalhar(id: string) {
     return this.baseService.get(`${this.urlController}/buscar/${id}`)
   }
 
@@ -26,12 +26,7 @@ export class OrcamentosService {
     return this.baseService.get(`${this.urlController}/cancelar/${id}`)
   }
 
-  ativar(id: string) {
-    return this.baseService.get(`${this.urlController}/ativar/${id}`)
+  concluir(id: string) {
+    return this.baseService.get(`${this.urlController}/concluir/${id}`)
   }
-
-  consultar(body) {
-    return this.baseService.post(`${this.urlController}/consultar`, body)
-  }
-
 }

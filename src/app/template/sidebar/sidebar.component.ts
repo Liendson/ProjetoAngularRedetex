@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/services/custom-alerts.service';
 import { Router } from '@angular/router';
 
 @Component({

@@ -6,17 +6,8 @@ import Swal, * as swal from 'sweetalert2';
 })
 export class CustomAlertsService {
 
-  public exibirSucesso(titulo: string, mensagem: string) {
-    Swal.fire({
-      title: titulo,
-      text: mensagem,
-      type: 'success',
-      confirmButtonClass: 'btn-danger',
-    });
-  }
-
   public exibirAvisoNaoImplementada() {
-    Swal.fire({
+    return Swal.fire({
       title: 'Erro!',
       text: 'Esta funcionalidade ainda não foi implementada!',
       type: 'error',
@@ -24,8 +15,17 @@ export class CustomAlertsService {
     });
   }
 
+  public exibirSucesso(titulo: string, mensagem: string) {
+    return Swal.fire({
+      title: titulo,
+      text: mensagem,
+      type: 'success',
+      confirmButtonClass: 'btn-danger',
+    });
+  }
+
   public exibirErro(titulo: string, mensagem: string) {
-    Swal.fire({
+    return Swal.fire({
       title: titulo,
       text: mensagem,
       type: 'error',
@@ -34,7 +34,7 @@ export class CustomAlertsService {
   }
 
   public exibirAlerta(titulo: string, mensagem: string) {
-    Swal.fire({
+    return Swal.fire({
       title: titulo,
       text: mensagem,
       type: 'warning',

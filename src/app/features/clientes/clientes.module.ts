@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { IncluirClientesComponent } from './incluir-clientes/incluir-clientes.component';
 import { ListarClientesComponent } from './listar-clientes/listar-clientes.component';
 import { EditarClientesComponent } from './editar-clientes/editar-clientes.component';
+import { ConsultarClientesComponent } from './consultar-clientes/consultar-clientes.component';
 
 const routes = [
    { path: '', component: ListarClientesComponent, pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes = [
    declarations: [
       IncluirClientesComponent,
       ListarClientesComponent,
-      EditarClientesComponent
+      EditarClientesComponent,
+      ConsultarClientesComponent
    ],
    imports: [
       SharedModule,

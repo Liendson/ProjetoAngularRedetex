@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
-import { SharedServicesService } from 'src/app/shared/shared-services/shared-services.service';
-import { OrcamentosService } from 'src/app/shared/shared-services/orcamentos.service';
-import { ClientesService } from 'src/app/shared/shared-services/clientes.service';
-import { Mascaras } from 'src/app/shared/mascaras/Mascaras';
+import { CustomAlertsService } from 'src/app/shared/services/custom-alerts.service';
+import { SharedServicesService } from 'src/app/shared/services/shared-services.service';
+import { OrcamentosService } from 'src/app/shared/services/orcamentos.service';
+import { ClientesService } from 'src/app/shared/services/clientes.service';
+import { Mascaras } from 'src/app/shared/mascaras/mascaras';
 
 @Component({
   selector: 'app-incluir-orcamentos',

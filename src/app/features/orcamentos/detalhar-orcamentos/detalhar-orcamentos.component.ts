@@ -2,20 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { CustomAlertsService } from 'src/app/shared/shared-services/custom-alerts.service';
+import { CustomAlertsService } from 'src/app/shared/services/custom-alerts.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-detalhar-orcamentos',
   templateUrl: './detalhar-orcamentos.component.html',
   styleUrls: ['./detalhar-orcamentos.component.scss']
 })
-export class DetalharOrcamentoComponent implements OnInit {
+export class ModalDetalharOrcamentoComponent implements OnInit {
 
   public dtOptions: DataTables.Settings = {};
   public dtTrigger: Subject<any> = new Subject();
   public orcamentos = [];
 
   constructor(
+    public activeModal: NgbActiveModal,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private http: HttpClient,

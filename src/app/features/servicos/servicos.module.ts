@@ -5,19 +5,22 @@ import { RouterModule } from '@angular/router';
 
 import { IncluirServicosComponent } from './incluir-servicos/incluir-servicos.component';
 import { EditarServicosComponent } from './editar-servicos/editar-servicos.component';
-import { ListarServicosComponent } from './listar-servicos/listar-servicos.component';
+import { ConsultarServicosComponent } from './consultar-servicos/consultar-servicos.component';
+import { ModalDetalharServicosComponent } from './detalhar-servicos/detalhar-servicos.component';
 
 const routes = [
-   { path: '', component: ListarServicosComponent, pathMatch: 'full' },
    { path: 'incluir', component: IncluirServicosComponent, pathMatch: 'full' },
-   { path: 'alterar/:id', component: EditarServicosComponent, pathMatch: 'full' }
+   { path: 'alterar/:id', component: EditarServicosComponent, pathMatch: 'full' },
+   { path: 'consultar', component: ConsultarServicosComponent, pathMatch: 'full' }
+
 ];
 
 @NgModule({
    declarations: [
       IncluirServicosComponent,
       EditarServicosComponent,
-      ListarServicosComponent
+      ConsultarServicosComponent,
+      ModalDetalharServicosComponent
    ],
    imports: [
       SharedModule,

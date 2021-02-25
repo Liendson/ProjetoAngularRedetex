@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h2 class="m-0 font-weight-bold text-primary">Orçamentos e Serviços</h2>
+    </div>
+    <div class="card-body">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th class="text-center">Número</th>
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Situação</th>
+            <th class="text-center">Cliente</th>
+            <th class="text-center">Rua</th>
+            <th class="text-center"><em class="fa fa-cog"></em></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orcamento of orcamentos">
+            <td class="text-center">{{ orcamento.idOrcamento }}</td>
+            <td class="text-center">{{ orcamento.tipoOrcamento }}</td>
+            <td class="text-center">{{ orcamento.situacaoOrcamento }}</td>
+            <td class="text-center">{{ orcamento.clienteOrcamento.nomeCliente }}</td>
+            <td class="text-center">{{ orcamento.enderecoOrcamento.nomeRua }} <span class="label label-primary"><em class="fa fa-map-marker"></em></span></td>
+            <td class="text-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-xs btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-cog small" aria-hidden="true"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <div class="dropdown-menu-component">
+                    <li>
+                      <a (click)="detalharOrcamento(orcamento.idOrcamento)"><i class="fa fa-eye small"></i>Detalhar</a>
+                    </li>
+                    <!-- <li>
+                      <a (click)=""><i class="fa fa-edit small"></i>Editar</a>
+                    </li> -->
+                    <li>
+                      <a (click)="concluirOrcamento(orcamento.idOrcamento)"><i class="fa fa-check small"></i>Concluir</a>
+                    </li>
+                    <li>
+                      <a (click)="cancelarOrcamento(orcamento.idOrcamento)"><i class="fa fa-close small"></i>Cancelar</a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
